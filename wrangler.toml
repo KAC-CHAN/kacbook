@@ -2,7 +2,7 @@
 name = "unique-betting-game"
 type = "javascript"
 compatibility_date = "2025-06-14"
-account_id = "8914dc9a5c0cbfaac15869563ec849ce"
+account_id = "<YOUR_ACCOUNT_ID>"  # add your Cloudflare account ID
 
 # Durable Object namespace
 [[durable_objects.namespaces]]
@@ -14,5 +14,5 @@ bucket = "frontend/out"
 entry-point = "workers-site"
 
 [build]
-command = "npm install --prefix frontend && npm run build --prefix frontend && next export --prefix frontend"
+command = "npm install --prefix frontend && npm run build --prefix frontend && npm run export --prefix frontend"
 upload = { format = "modules", dir = "frontend/out" }
