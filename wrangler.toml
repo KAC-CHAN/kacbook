@@ -1,16 +1,18 @@
-# wrangler.toml
+# wrangler.toml (Workers Sites + Durable Objects)
 name = "unique-betting-game"
-main = "functions/index.js"
+type = "javascript"
 compatibility_date = "2025-06-14"
+account_id = "8914dc9a5c0cbfaac15869563ec849ce"
 
+# Durable Object namespace
 [[durable_objects.namespaces]]
 binding = "GAME_ROOM"
 class_name = "GameRoom"
 
-[build]
-command = "npm install && npm run build"
-upload = { format = "modules" }
+[site]
+bucket = "frontend/out"
+entry-point = "workers-site"
 
-# Cloudflare Pages settings
-# Build the frontend into a static export
-pages_build_output_dir = "frontend/out"
+[build]
+command = "npm install --prefix frontend && npm run build --prefix frontend && next export --prefix frontend"
+upload = { format = "modules", dir = "frontend/out" }
