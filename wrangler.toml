@@ -1,0 +1,12 @@
+// wrangler.toml
+name = "unique-betting-game"
+main = "functions/index.js"
+compatibility_date = "2025-06-14"
+[[durable_objects.namespaces]]
+  binding = "GAME_ROOM"
+  class_name = "GameRoom"
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "modules"
