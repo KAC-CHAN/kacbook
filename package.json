@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd frontend && npm install && npm run build && npm run export"
+    "dev": "next dev",
+    "build": "npm install && npm run build && npm run export"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "next": "^13.0.0",
+    "reconnecting-websocket": "^4.4.0",
+    "shadcn-ui": "^1.0.0",
+    "framer-motion": "^7.0.0"
   }
 }
