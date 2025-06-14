@@ -1,9 +1,8 @@
-
 {
+  "name": "unique-betting-game-pages",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "export": "next export",
-    "start": "next start"
+    "build": "npm install --prefix frontend && npm run build --prefix frontend && npm run export --prefix frontend"
   }
 }
